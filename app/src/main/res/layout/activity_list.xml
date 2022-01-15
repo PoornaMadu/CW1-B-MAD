@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/snowyback"
+    tools:context=".ListActivity">
+
+    <ScrollView
+        android:id="@+id/scroolView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_below="@+id/navBar"
+        android:background="#BE333232"
+        app:layout_constraintBottom_toTopOf="@+id/navBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_weather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#BE333232"
+        android:paddingTop="32dp"
+        android:paddingBottom="32dp"
+        android:text="Weather in next days"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navBar"
+        android:layout_width="405dp"
+        android:layout_height="77dp"
+        android:background="#C3A5CCEC"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/locationBtn"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignTop="@+id/mapBtn"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="24dp"
+            android:layout_toEndOf="@+id/mapBtn"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/searchocation"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/mapBtn"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="52dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/homeBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/homeBtn"
+            app:layout_constraintTop_toTopOf="@+id/homeBtn"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/pollution"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/homeBtn"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignTop="@+id/locationBtn"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="24dp"
+            android:layout_toEndOf="@+id/locationBtn"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/listBtn"
+            app:layout_constraintStart_toEndOf="@+id/listBtn"
+            app:layout_constraintTop_toTopOf="@+id/listBtn"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/cloud"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/listBtn"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignTop="@+id/homeBtn"
+            android:layout_alignBottom="@+id/homeBtn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="24dp"
+            android:layout_toEndOf="@+id/homeBtn"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/locationBtn"
+            app:layout_constraintStart_toEndOf="@+id/locationBtn"
+            app:layout_constraintTop_toTopOf="@+id/locationBtn"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/next"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
